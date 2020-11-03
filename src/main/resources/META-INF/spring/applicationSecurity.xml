@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+	   		http://www.springframework.org/schema/context 
+	   		http://www.springframework.org/schema/context/spring-context-3.2.xsd
+			http://www.springframework.org/schema/security 
+			http://www.springframework.org/schema/security/spring-security-3.2.xsd
+			http://www.springframework.org/schema/util
+	        http://www.springframework.org/schema/util/spring-util-3.2.xsd">
+	
+	<security:http auto-config="true" use-expressions="true">
+
+<!-- 		<security:intercept-url pattern="/webservices/*" -->
+<!-- 			access="hasRole('ROLE_ADMIN')" /> -->
+			
+<!-- 		<security:intercept-url pattern="/orderSummary" -->
+<!-- 			access="hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')" /> -->
+<!-- 		<security:intercept-url pattern="/orderSummary/*" -->
+<!-- 			access="hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')" /> -->
+<!-- 		<security:intercept-url pattern="/orders" -->
+<!-- 			access="hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')" /> -->
+<!-- 		<security:intercept-url pattern="/orders/*" -->
+<!-- 			access="hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')" /> -->
+<!-- 		<security:intercept-url pattern="/reports" -->
+<!-- 			access="hasRole('ROLE_ADMIN')" /> -->
+<!-- 		<security:intercept-url pattern="/reports/**" -->
+<!-- 			access="hasRole('ROLE_ADMIN')" /> -->
+<!-- 		<security:intercept-url pattern="/myAccount" -->
+<!-- 			access="hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')" /> -->
+<!-- 		<security:intercept-url pattern="/campaignMessage" -->
+<!-- 			access="hasRole('ROLE_ADMIN')" /> -->
+<!-- 		<security:intercept-url pattern="/campaignMessage/*" -->
+<!-- 			access="hasRole('ROLE_ADMIN')" /> -->
+
+		<security:intercept-url pattern="/" access="isAuthenticated()" />
+		<security:intercept-url pattern="/login"
+			access="permitAll" />
+		<security:intercept-url pattern="/index*"
+			access="isAuthenticated()" />
+		<security:intercept-url pattern="/user-login"
+			access="permitAll" />
+		<security:intercept-url pattern="/accessRole/**" access="isAuthenticated()" />
+		<security:intercept-url pattern="/userAdmin/**" access="isAuthenticated()" />
+		<security:intercept-url pattern="/notification-management/**" access="isAuthenticated()" />
+		<security:intercept-url pattern="/threshold/**" access="isAuthenticated()" />
+		<security:intercept-url pattern="/tracking/**" access="isAuthenticated()" />
+		<security:intercept-url pattern="/report/**" access="isAuthenticated()" />
+		<security:intercept-url pattern="/daily_report" access="isAuthenticated()" />
+		<security:intercept-url pattern="/detail_report" access="isAuthenticated()" />
+
+		<security:form-login login-page="/user-login" 
+			default-target-url="/" authentication-failure-url="/error-login"
+			authentication-success-handler-ref="authSuccessHandler" />
+
+		<security:logout invalidate-session="true"
+			success-handler-ref="logoutSuccessHandler" />
+
+		<security:access-denied-handler ref="customAccessDeniedHandler" />
+
+		<security:session-management
+			invalid-session-url="/user-login" session-authentication-error-url="/user-login"
+			session-authentication-strategy-ref="sas" />
+	</security:http>
+
+	<bean id="customAccessDeniedHandler" class="com.gvpt.admintool.web.controller.login.AccessDeniedHandler"></bean>
+	<bean id="webexpressionHandler"
+		class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler" />
+
+	<bean id="authSuccessHandler" class="com.gvpt.admintool.web.controller.login.SuccessLoginHandlerImpl">
+	</bean>
+	<bean id="logoutSuccessHandler"
+		class="com.gvpt.admintool.web.controller.login.LogoutSuccessHandlerImpl">
+		<property name="useReferer" value="true"></property>
+	</bean>
+	<security:authentication-manager>
+		<security:authentication-provider
+			user-service-ref="loginServiceImpl">
+			<security:password-encoder ref="encoder" />
+		</security:authentication-provider>
+	</security:authentication-manager>
+
+	<bean id="encoder"
+		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
+
+	<bean id="sas"
+		class="org.springframework.security.web.authentication.session.ConcurrentSessionControlAuthenticationStrategy">
+		<constructor-arg name="sessionRegistry" ref="sessionRegistry" />
+		<property name="maximumSessions" value="${session.max}" />
+		<property name="exceptionIfMaximumExceeded" value="false" />
+	</bean>
+
+	<bean id="sessionRegistry"
+		class="org.springframework.security.core.session.SessionRegistryImpl" />
+</beans>

@@ -1,0 +1,41 @@
+<div xmlns:jsp="http://java.sun.com/JSP/Page"
+     xmlns:c="http://java.sun.com/jsp/jstl/core"
+     xmlns:s="http://www.springframework.org/tags"
+     xmlns:form="http://www.springframework.org/tags/form"
+     xmlns:util="urn:jsptagdir:/WEB-INF/tags/util"
+     xmlns:input="urn:jsptagdir:/WEB-INF/tags/input" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+
+    <div class="container" id="wrapper">
+        <div class="login-container">
+            <fieldset class="col-sm-12 bordure">
+                <div class="title">LOGIN</div>
+                <c:if test="${error == true}">
+                    <div class="alert alert-danger" role="alert">
+							<span class="glyphicon glyphicon-exclamation-sign"
+                                  aria-hidden="true"></span> <span class="sr-only">Error:</span>
+                        <s:message code="login.error.invalid"/>
+                    </div>
+                </c:if>
+                <s:url value="j_spring_security_check" var="url_login"/>
+                <form:form class="login" method="post"
+                           action="${url_login }">
+                    <div class="login">
+                        <input class="login" type="text"
+                               placeholder="USER ID"
+                               name="j_username" id="j_username"/>
+                    </div>
+                    <div class="login">
+                        <input class="login" type="password"
+                               placeholder="PASSWORD" name="j_password" id="j_password"
+                                />
+                    </div>
+                    <div class="login">
+                        <button type="submit" class="btn login-btn">Login</button>
+                    </div>
+                </form:form>
+            </fieldset>
+        </div>
+    </div>
+</div>

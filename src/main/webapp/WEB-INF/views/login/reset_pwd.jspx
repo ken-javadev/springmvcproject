@@ -1,0 +1,76 @@
+<div xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:s="http://www.springframework.org/tags"
+	xmlns:form="http://www.springframework.org/tags/form"
+	xmlns:util="urn:jsptagdir:/WEB-INF/tags/util"
+	xmlns:input="urn:jsptagdir:/WEB-INF/tags/input" version="2.0">
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+
+	<div class="container" id="wrapper">
+		<fieldset class="col-sm-12 bordure">
+			<!-- START OF CONTENT -->
+			<div class="row">
+				<div class="col-md-3">&#160;</div>
+				<div class="col-md-6">
+					<h3>
+						<s:message code="reset.pwd.command" />
+					</h3>
+					<br/>
+					<form:form class="form-horizontal" method="POST"
+						modelAttribute="resetPassword"
+						action="${pageContext.request.contextPath}/reset_pwd/submit">
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" for="newPassword"
+								path="newPassword">
+								<s:message code="reset.pwd.new" />
+								<span class="red">*</span>
+							</form:label>
+							<div class="col-sm-9">
+								<form:input class="form-control" type="password"
+									name="newPassword" id="newPassword" path="newPassword" />
+								<form:errors path="newPassword" cssClass="error" />
+							</div>
+						</div>
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label"
+								for="retypeNewPassword" path="retypeNewPassword">
+								<s:message code="reset.pwd.retype" />
+								<span class="red">*</span>
+							</form:label>
+							<div class="col-sm-9">
+								<form:input class="form-control" type="password"
+									name="retypeNewPassword" id="retypeNewPassword"
+									path="retypeNewPassword" />
+								<form:errors path="retypeNewPassword" cssClass="error" />
+							</div>
+						</div>
+						<form:hidden path="email" />
+						<form:hidden path="oldPassword" />
+
+						<!-- START OF ACTION BUTTON -->
+						<div class="form-group">
+							<div class="col-sm-offset-3 col-sm-9">
+								<input type="submit" class="btn btn-primary" value="Reset" />
+								<a href="${pageContext.request.contextPath}/index.html"
+									class="btn btn-default"><s:message
+										code="button.cancel" /></a>
+							</div>
+						</div>
+					</form:form>
+				</div>
+				<div class="col-md-3">&#160;</div>
+				<!-- END OF CONTENT -->
+
+				<!-- END OF ACTION BUTTON -->
+			</div>
+			<script type="text/javascript">
+				$(function() {
+					$('#submit').click(function() {
+						$('form').submit();
+					});
+				})
+			</script>
+		</fieldset>
+	</div>
+</div>

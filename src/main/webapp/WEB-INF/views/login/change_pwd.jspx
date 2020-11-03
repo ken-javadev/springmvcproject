@@ -1,0 +1,73 @@
+<div xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:s="http://www.springframework.org/tags"
+	xmlns:form="http://www.springframework.org/tags/form"
+	xmlns:util="urn:jsptagdir:/WEB-INF/tags/util"
+	xmlns:input="urn:jsptagdir:/WEB-INF/tags/input" version="2.0">
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+
+	<div class="container">
+		<fieldset class="col-sm-12 bordure">
+		
+	    <div class="canvas_container">
+	        <div class="canvas">
+	        	<!-- START OF CONTENT -->
+	            <div class="content_container">
+	            	<form:form method="POST" modelAttribute="changePassword" action="${pageContext.request.contextPath}/change_pwd/save">
+		            	<table width="100%" border="0" cellpadding="5" cellspacing="0">
+							<tr>
+								<td colspan="2" valign="top">
+									<strong><s:message code="change.password"/> </strong>
+								</td>
+							</tr>
+							<tr>
+								<td valign="top"><strong><s:message code="current.password"/> <span class="red">*</span></strong></td>
+								<td valign="top">
+									<form:password path="currentPassword" cssStyle="width:200px;"/><br>
+									<form:errors path="currentPassword" cssClass="error"/>
+								</td>
+							</tr>
+							<tr>
+								<td valign="top"><strong><s:message code="new.password"/> <span class="red">*</span></strong></td>
+								<td valign="top">
+									<form:password path="newPassword" cssStyle="width:200px;"/><br>
+									<form:errors path="newPassword" cssClass="error"/>
+								</td>
+							</tr>
+							<tr>
+								<td valign="top"><strong><s:message code="retype.new.password"/> <span class="red">*</span></strong></td>
+								<td valign="top">
+									<form:password path="retypeNewPassword" cssStyle="width:200px;"/><br>
+									<form:errors path="retypeNewPassword" cssClass="error"/>
+								</td>
+							</tr>
+		                </table>
+	                </form:form>
+				</div>
+	            <div class="spacer"></div>
+	            <div class="spacer2"></div>
+	            <!-- END OF CONTENT -->
+	            <!-- START OF ACTION BUTTON -->
+	            <table width="100%" border="0" cellpadding="2" cellspacing="0">
+	              	<tr>
+	                	<td width="85%">
+			                <a href="#" class="btn" id="save"><s:message code="button.save"/></a>
+	                	</td>
+	                	<td width="15%" align="right">&nbsp;</td>
+	              	</tr>
+	            </table>
+	            <div class="spacer2"></div>
+	          	<!-- END OF ACTION BUTTON -->
+			</div>
+			<div class="canvas_btm"></div>
+		</div>
+		<script type="text/javascript">
+		$(function(){
+			$('#save').click(function(){
+				$('form').submit();
+			});
+		})
+		</script>
+		
+		</fieldset></div></div>

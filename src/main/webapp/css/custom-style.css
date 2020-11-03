@@ -1,0 +1,184 @@
+/* --------------------------------
+General
+---------------------------------*/
+
+.required .msg-error {
+	color: red;
+	padding-left: 20px;
+}
+
+.error {
+	color: red;
+}
+
+.entity li {
+	margin: 5px;
+	font-size: 1.2em;
+}
+.entity li a {
+	display: block;
+	width: 200px;
+	height: 30px;
+}
+.entity li a:hover {
+	color: #cc4444;
+}
+.languages {
+	float: right;
+}
+
+
+.control-label{
+	text-align: left !important;
+}
+
+.cx-title-campaign-date{
+	font-size:14px;
+	font-weight:normal;
+}
+
+.cx-form-search{
+	float:left;
+	padding-bottom: 15px;
+}
+
+.cx-table-header, .cx-table-column-center{
+	vertical-align: middle !important;
+	text-align: center;
+}
+
+.cx-calendar{
+	float:right;
+	width:673px;
+	background: white !important;
+	
+}
+
+.cx-calendar table tr td{
+	background: none !important;
+	padding: 0px !important;
+	font-size: 1em !important;
+}
+
+.cx-calendar .fc-day-number {
+  padding: 2px !important;
+}
+
+.cx-calendar .fc-today {
+  background: #fcf8e3 !important;
+  border-left: double 1px #ddd !important;
+  border-top: double 1px #ddd !important;
+}
+
+.cx-calendar .fc-highlight {
+	background: #bce8f1 !important;
+	opacity: .3 !important;
+	filter: alpha(opacity=30) !important;
+}
+
+.cx-calendar .activeCellDay {
+  background-color: #bce8f1 !important;
+}
+
+td .fc-event-container{
+	display:none !important;
+}
+
+.cx-dialog .close {
+	font-size: 21px !important;
+	font-weight: bold !important;
+	height: auto !important;
+	padding: 0 !important;
+}
+
+.cx-dialog .dialog-input{
+	width: auto !important;
+}
+
+.cx-dialog .dialog-footer{
+	text-align: left !important;
+}
+
+h4{
+	font-size: 18px !important;
+}
+
+.ordersNav{
+	margin-bottom: 20px;
+}
+
+.ordersNav table tr td {
+  font-size: 14px !important;
+  padding: 10px 11px !important;
+  background-color: #545f6f !important;
+  border-top: 1px solid #66707f !important;
+  border-left: 1px solid #66707f !important;
+  border-right: 1px solid #3a424d !important;
+  color: #fff !important;
+}
+
+.ordersNav table tr td a {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+.ordersNav table tr td.active {
+  background-color: #ebebeb !important;
+  color: #333 !important;
+}
+
+.ordersNav table tr td.active a {
+  color: #545f6f !important;
+}
+
+.successbox strong, .errorbox strong{
+  color:white !important;
+}
+
+/* --------------------------------
+Data Table
+---------------------------------*/
+table.dataTable thead th {
+    background-color: #707070;
+    border-bottom: 1px solid white;
+    color: #FFF7F7;
+    cursor: pointer;
+    height: 20px;
+
+}
+
+#auditTrailWebTbl tr td {
+	background-color: transparent;
+}
+
+/* --------------------------------
+Footer
+---------------------------------*/
+.footer_wrapper{
+	height:42px;
+	color: #999;
+	background-image:-webkit-linear-gradient(top,#3c3c3c 0,#222 100%);
+	background-image:-o-linear-gradient(top,#3c3c3c 0,#222 100%);
+	background-image:-webkit-gradient(linear,left top,left bottom,from(#3c3c3c),to(#222));
+	background-image:linear-gradient(to bottom,#3c3c3c 0,#222 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3c3c3c', endColorstr='#ff222222', GradientType=0);
+	filter:progid:DXImageTransform.Microsoft.gradient(enabled=false);
+	background-repeat:repeat-x
+}
+
+.footer_container{
+	height:20px;
+	margin:auto;
+	text-align:center;
+	font-size:11px;
+	padding:12px 0;
+}
+
+.cxmenu a:HOVER{
+	color: #333;
+}
+
+.cxmenu a:active{
+	background-color: #ebebeb;
+	color: #333;
+}

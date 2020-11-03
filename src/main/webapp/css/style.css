@@ -1,0 +1,344 @@
+/* standard
+-------------------------------------------------- */
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+html {
+  font-size: 10px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body {
+    color: #fff;
+    font-family: 'opensans', helvetica, arial, sans-serif;
+    font-weight: lighter;
+    position: relative;
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    background: url(../img/bg.png) top ;
+    background-size: cover;
+    height: 100%;
+}
+
+img {max-width: 100%;}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    color: inherit;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+}
+h4, .h4, h5, .h5, h6, .h6 {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+h1, h2 { font-family: 'opensans', helvetica, arial, sans-serif; }
+h1 { font-size: 3.75rem; font-size: 60px;}
+h2 { font-size: 3rem; font-size: 48px; color: #555;}
+h4 { font-size: 18px; }
+h5 { font-size: 14px; }
+b, strong {
+    font-weight: 500;
+}
+ul, ol {padding: 0;}
+a {color: inherit; text-decoration: none;}
+a:hover, a:focus {color: inherit; text-decoration: none;}
+.inline {display:inline;}
+.clear {clear: both;}
+.center {text-align: center;}
+select {height: 30px; border-radius: 10px;}
+
+/* NAVIGATIONS
+-------------------------------------------------- */
+header {
+  background-color: #000;
+  width: 100%;
+  height: 150px;
+}
+.nav {background: #3b4044; height: 50px;}
+.nav ul {margin-top: 15px;}
+.nav li {display: inline; color:#fff; margin: 20px;}
+.logo-container {padding: 25px 15px; display: inline-block;}
+.header-type {color: #fff; display: inline-block; font-size: 24px;}
+.wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 0 20px 100px;
+}
+.breadcrumb {
+  background: none;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  margin:15px 0;
+  padding: 0;
+  border-radius: none;
+}
+.flabel, .field {display: inline; margin-right: 10px;}
+.field input {border-radius: 10px; margin-right: 50px; color: #555; padding: 2px;}
+.field input[type="checkbox"] {margin-right:20px; }
+.field select {width: 175px; color:#555;}
+.field-short input {width: 80px;}
+.red {color:#ff0000;}
+select .selected {color:#cccccc;}
+.select-style {
+    border: 1px solid #ccc;
+    width: 120px;
+    border-radius: 3px;
+    overflow: hidden;
+    background: #fafafa url("img/icon-select.png") no-repeat 90% 50%;
+}
+.thispage {font-weight: lighter;}
+.line { border-bottom: 1px solid #d3d3d3; margin: 20px 0;}
+.right-pos {position: absolute; right: 20px;}
+/*------------------------------------------------ */
+
+.login-container {
+  max-width: 800px;
+  padding: 150px;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+}
+.title {font-weight: bold; font-size: 24px; color: #959595;}
+.user-info {float: right; padding: 20px;}
+.but_cont {float: right; padding: 30px 20px;}
+.last-login {color: #bfb9b9; font-size: 16px; text-align: right;}
+.welcome {color: #fff; font-size: 24px; text-align: right;}
+
+.login { width: 100%; margin: 30px 0;}
+.login input {
+  border-radius: 8px;
+  display: inline-block;
+  height: 45px;
+  padding: 10px;
+  margin: 0 auto;
+  max-width: 350px;
+  position: relative;
+  width: 100%; 7
+  background-color: #fff;
+  color: black;
+}
+.login input::placeholder {padding: 10px;}
+#fade1 {background: rgba(255, 255, 255, 1);  }
+
+.fadeheader {background: #3b4044; height: 70px; }
+.fade-title {
+    font-size: 24px;
+    font-weight: bold;
+    left: 15px;
+    position: absolute;
+    top: 16px;
+  }
+.fade-close {
+    display: block;
+    font-size: 40px;
+    height: 36px;
+    margin-top: 12px;
+    position: absolute;
+    right: 10px;
+    width: 36px;
+    opacity: .8;
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: medium none;
+  }
+  .close {color: #fff;}
+.fade-content {padding: 25px; color: #000000; font-size: 18px;background-color: white;}
+.fade-button { margin-top: 60px;}
+
+
+/* Image
+-------------------------------------------------- */
+#j_username  {background:#ffffff url(../img/account-2x.png) no-repeat 300px 8px;}
+#j_password  {background:#ffffff url(../img/ic_lock_2x.png) no-repeat 305px 8px;}
+#userAdmin {background: url(../img/add_user.png) no-repeat center 20%;}
+#accessRole {background: url(../img/site_map.png) no-repeat center 20%;}
+#notification-management {background: url(../img/bell_outline.png) no-repeat center 20%;}
+#report {background: url(../img/text_file.png) no-repeat center 20%;}
+/*-------------------------------------------------- */
+
+
+.login-btn {background: #f0b270; border-radius: 18px; min-width: 100px; color: #fff;}
+.cancel-btn {background: #777777; border-radius: 18px; min-width: 100px; color: #fff; margin-left: 20px;}
+
+
+.control_container {text-align: center; margin-top: 150px;}
+.control_container a:hover {
+    border-radius: 10px;
+    background-color: #f0b270;
+    height: 250px;
+    vertical-align: top;
+    width: 200px;
+}
+.control_container li {display: inline-block; vertical-align: top; height: 100%;}
+.control_container a {width: 200px; height: 250px; color: #fff; background-color:#bfb9b9; border-radius: 10px; display: inline-block; vertical-align: top; margin: 12.5px;}
+.control_title {padding: 120px 0 0;}
+
+/*pagination*/
+.pagination a {padding: 10px 15px;}
+.pagination a.active {
+    background-color: #f0b270;
+    color: white;
+    border-radius: 20px;
+}
+
+.pagination a:h over:not(.active) {background-color: #ddd;}
+
+.user-table {margin: 0 auto; max-width: 1024px; }
+.user-table tr,.user-table th, .user-table td {padding: 5px 10px;}
+.user-table th {background: #707070; font-weight: lighter;}
+.user-table td:nth-child(1), .user-table th:nth-child(1) {
+  text-align: right
+}
+
+.user-role {margin: 0 auto; max-width: 720px; }
+.user-role tr,.user-role th, .user-role td {padding: 5px 10px;}
+.user-role th {background: #707070; font-weight: lighter;}
+.user-role td:nth-child(2), .user-role th:nth-child(2) {
+  text-align: center;
+}
+
+.notification-table {margin: 0 auto; max-width: 1024px; }
+.notification-table tr,.notification-table th, .notification-table td {padding: 5px 10px;}
+.notification-table th {background: #707070; font-weight: lighter; color: #ffffff;}
+
+.notification-table td:last-child{
+  text-align: center;
+}
+
+.management-table { max-width: 860px; float: left;}
+.management-table tr,.management-table th, .management-table td {padding: 5px 10px;}
+.management-table th {background: #707070; font-weight: lighter; color: #ffffff;}
+
+.management-table td:last-child, .management-table th:last-child{
+  text-align: center;
+}
+
+#edit {background: url(../img/edit.png) no-repeat; padding: 11px; margin:5px 10px;display: inline-block;}
+#delete {background: url(../img/delete.png) no-repeat; padding: 11px;margin:5px 0;display: inline-block;}
+
+.step_container {padding: 20px 50px;;}
+.step {font-size: 24px; font-weight: bold; text-transform: uppercase;}
+.step_container input {margin-right:20px; border-radius: 10px;color: black;}
+.step_container input[type="checkbox"] {margin-right:20px; }
+.zero-left {padding-left: 0; margin-left: 0;}
+
+.tracking select {width:80px; color: #555;}
+
+/* REPORT
+----------------------------------------- */
+canvas {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+        
+.padd-chart {
+    padding: 40px 20px 20px;
+}
+
+.txt-center {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight:bold;
+}
+.txt-left {
+    text-align: left;
+    margin-bottom: 30px;
+}
+.txt-right {
+    text-align: right;
+    margin-bottom: 30px;
+}
+
+.datepicker-hours,
+.datepicker-days,
+.datepicker-months,
+.datepicker-minutes{
+	color: #000;
+}
+      
+.search-bx {
+    margin-bottom: 30px;
+}
+
+.search-bx select {
+    color: #000;
+}
+      
+@media (min-width: 768px) {
+  .form-inline .form-control {
+	  width: 200px;
+  }
+}
+
+
+/* Menu report drop down
+----------------------------------------- */
+
+.main-navigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: #3B4044;
+  z-index:100;
+}
+ 
+.main-navigation ul li {
+  display: block;
+  position: relative;
+  float: left;
+  background: #3B4044;
+}
+ 
+/* This hides the dropdowns */
+ 
+ 
+.main-navigation li ul { display: none; }
+ 
+.main-navigation ul li a {
+  display: block;
+  padding: 1em;
+  text-decoration: none;
+  white-space: nowrap;
+  color: #fff;
+}
+ 
+.main-navigation ul li a:hover { background: #2c3e50; }
+ 
+/* Display the dropdown */
+ 
+ 
+.main-navigation li:hover > ul {
+  display: block;
+  position: absolute;
+}
+ 
+.main-navigation li:hover li { float: none; }
+ 
+.main-navigation li:hover a { background: #3B4044; }
+ 
+.main-navigation li:hover li a:hover { background: #2c3e50; }
+ 
+.main-navigation li ul li { border-top: 0; }
+ 
+/* Displays second level dropdowns to the right of the first level dropdown */
+ 
+ 
+.main-navigation ul ul ul {
+  left: 100%;
+  top: 0;
+}
+ 
+/* Simple clearfix */
+ 
+ 
+ 
+.main-navigation ul:before,
+.main-navigation ul:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+ 
+.main-navigation ul:after { clear: both; }
+

@@ -1,0 +1,63 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/task
+		http://www.springframework.org/schema/task/spring-task-3.0.xsd">
+
+	<import resource="classpath:/META-INF/spring/applicationContext-data.xml"/>
+	<import resource="classpath:/META-INF/spring/applicationContext-messages.xml"/>
+
+	<context:annotation-config />
+	<task:annotation-driven/>
+	
+	<context:component-scan base-package="com.gvpt.admintool" />
+
+	<bean class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:META-INF/config/application_${env}.properties</value>
+			</list>
+		</property>
+		<property name="fileEncoding" value="UTF-8"/>
+		<property name="ignoreResourceNotFound" value="false"/>
+	</bean>
+	
+	<bean id="velocityEngine"
+        class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
+        <property name="velocityProperties">
+            <props>
+                <prop key="resource.loader">class</prop>
+                <prop key="class.resource.loader.class">
+                    org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+                </prop>
+                <prop key="class.resource.loader.resourceLoaderPath">classpath:com/gvpt/admintool/common/email</prop>
+                
+            </props>
+        </property>
+    </bean>
+	
+	<!-- Email Server Configuration -->
+    <bean id="mailSender"
+        class="org.springframework.mail.javamail.JavaMailSenderImpl">
+
+       <property name="host" value="${mail.smtp.host}" />
+		<property name="port" value="${mail.smtp.port}" />
+		<property name="username" value="${mail.smtp.username}" />
+		<property name="password" value="${mail.smtp.password}" />
+	 
+		<property name="javaMailProperties">
+		   <props>
+	       	      <prop key="mail.smtp.auth">${mail.smtp.auth}</prop>
+	       	      <prop key="mail.smtp.starttls.enable">${mail.smtp.starttls.enable}</prop>
+	       	      <prop key="mail.smtp.ssl.trust">${mail.smtp.host}</prop>
+	       	   </props>
+		</property>
+	</bean>
+	
+</beans>
