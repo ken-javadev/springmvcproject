@@ -27,7 +27,7 @@
 		<property name="dataSource" ref="dataSource" />
 		<property name="jpaVendorAdapter">
 			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
-				<property name="database" value="${database.database}"/>
+				<property name="database" value="POSTGRESQL"/>
 				<property name="databasePlatform" value="${database.databasePlatform}"/>
 				<property name="showSql" value="${database.showSql}"/>
 				<property name="generateDdl" value="${database.generateDdl}"/>
