@@ -21,7 +21,7 @@
 	<bean class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
 		<property name="locations">
 			<list>
-				<value>classpath:META-INF/config/application_${env}.properties</value>
+				<value>classpath:META-INF/config/application_local.properties</value>
 			</list>
 		</property>
 		<property name="fileEncoding" value="UTF-8"/>

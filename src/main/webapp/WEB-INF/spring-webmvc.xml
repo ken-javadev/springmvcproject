@@ -13,7 +13,7 @@
 
 	<context:component-scan base-package="com.gvpt.admintool.web" />
 	
-	<context:property-placeholder location="classpath:META-INF/config/application_${env}.properties" />
+	<context:property-placeholder location="classpath:META-INF/config/application_local.properties" />
 
     <bean id="applicationConversionService" class="com.gvpt.admintool.web.convert.ConversionServiceFactoryBean"/>
 
