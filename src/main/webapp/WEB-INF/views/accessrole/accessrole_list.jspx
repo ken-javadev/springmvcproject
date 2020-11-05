@@ -16,7 +16,7 @@
                 code="userAdmin.list.title2"/></a>
         </div>
         &#x3C;div class=&#x22;line&#x22;&#x3E;&#x3C;/div&#x3E;
-        <a id="button-new" href="/GVPTAdminTool/accessRole/form" class="btn login-btn pull-left"><s:message
+        <a id="button-new" href="/accessRole/form" class="btn login-btn pull-left"><s:message
                 code="accesRole.list.addUserRole"/></a>
         <table class="user-table" width="100%" border="1" cellpadding="1" id="accessRoleList">
             <thead>

@@ -85,7 +85,7 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-            $.get('/GVPTAdminTool/accessRole/checkAll', function (responseJson) {
+            $.get('/accessRole/checkAll', function (responseJson) {
                 if (responseJson == true) {
                     $('#checkAll').prop('checked', true);
                 } else {

@@ -36,7 +36,7 @@
         </div>
     </div>
     &#x3C;div class=&#x22;line&#x22;&#x3E;&#x3C;/div&#x3E;
-    <a id="button-new" href="/GVPTAdminTool/userAdmin/form" class="btn login-btn pull-left"><s:message
+    <a id="button-new" href="/userAdmin/form" class="btn login-btn pull-left"><s:message
             code="userAdmin.list.addUser"/></a>
     <table class="user-table" id="userAdminList" border="1">
         <thead>
